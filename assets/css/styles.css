@@ -1,0 +1,121 @@
+/* ====== Layout Styles ====== */
+
+body {
+    font-family: 'Times New Roman', Times, serif;
+    color: #282a2f;
+
+}
+
+header {
+    width: 100%;
+    max-height: 300px;
+    padding-top: 30px;
+}
+
+#container {
+    max-width: 1120px;
+    height: 100%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 30px;
+    background-color: #9dbccb;
+    padding: 40px;
+}
+
+#intro {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+    max-width: 680px;
+}
+
+#game {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+    max-width: 750px;
+}
+
+
+/* ====== Font Styles ====== */
+
+h1 {
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+    font-size: 32px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+p {
+   font-size: 16px;
+   margin-bottom: 14px; 
+   line-height: 18px;
+}
+
+ul {
+    margin-left: 15px;
+}
+
+
+
+/* ====== Image Styles ====== */
+
+.centerImage {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 100%;
+    max-height: auto;
+}
+
+
+/* ====== Button Styles ====== */
+
+#btnStart {
+    display: block;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px;
+    background-color: #282a2f;
+    color: #9dbccb;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 18px;
+    width: 150px;
+    border: none;
+    cursor:pointer;
+}
+
+#btnSubmit {
+    display: block;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px;
+    background-color: #282a2f;
+    color: #9dbccb;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 18px;
+    width: 150px;
+    border: none;
+    cursor:pointer;
+}
+
+#btnRestart {
+    display: block;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px;
+    background-color: #282a2f;
+    color: #9dbccb;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 18px;
+    width: 150px;
+    border: none;
+    cursor:pointer;
+}
