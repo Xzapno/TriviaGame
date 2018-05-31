@@ -2,7 +2,8 @@ $(document).ready(function() {
 
     // -- Set Variables -- //
 
-       var seconds = null;
+       var seconds = 60;
+       var quizContainer = document.getElementById('quiz');
        var correctAnswers = 0;
        var wrongAnswers = 0;
        var unaswered = 0;
@@ -15,15 +16,15 @@ $(document).ready(function() {
         $("#btnStart").click(function() {
             $("#start").hide();
             $("#game").show();
-            timer();
-
+            counter();
+            generateQuiz();
+            showQuestions();
         });
 
         $("#btnSubmit").click(function() {
             $("#game").hide();
             $("#score").show();
-            clearTimeout(timer);
-            scoring();
+
         });
 
         $("#btnRestart").click(function() {
@@ -31,13 +32,81 @@ $(document).ready(function() {
             $("#start").show();
         });
 
+    // -- Quiz Functions & variables --//
+
+        function generateQuiz(questions, quizContainer, resultsContainer, submitButton){
+
+            function showQuestions(questions, quizContainer){
+                // Create a container for the questions & answers
+                var output = [];
+                var answers;
+
+                for(var i = 0; i,questions.length; i++){
+                    answers = [];
+                    for(letter in questions[i].answers){
+                        answers.push(
+                            '<label>'
+                            + '<input type="radio" name="question'+i+'" value="'+letter+'">'
+                            + letter + ': '
+                            + questions[i].answers[letter]
+                            + '</label'
+                        );
+                    }
+
+                    output.push(
+                        '<div class="question">' + questions[i].questions + '</div>'
+                        + '<div class="answers">' + answers.join('') + '</div>'
+                    );
+                }
+            
+            }
+
+            function showResults(questions, quizContainer, resultsContainer){
+
+            }
+
+            showQuestions(questions, quizContainer);
+
+            submitButton.onclick = function(){
+                showResults(questions, quizContainer, resultsContainer);
+            }
+
+        }
+
+        var myQuestions = [
+
+            {
+                question: "1. What artist is credited with creating Batman?",
+                answers: {
+                    a: 'Jack Kirby',
+                    b: 'Bob Kane',
+                    c: 'Joe Schuster'
+                },
+                correctAnswer: 'b'
+            },
+            {
+                question: "What comicbook featured the first appearnace of Batman?",
+                answers: {
+                    a: 'Action Comics #1',
+                    b: 'Amazing Fantasy #15',
+                    c: 'Detective Comics #27'
+                },
+                correctAnswer: 'c'
+            }
+            
+        ];
+
 
     // -- Timer -- /
 
         function timer(){
-            setTimeout(scoring, 60000);
+            seconds--;
+            $("#timerDisplay").html("<h1>Time Remaining: " + seconds + " Seconds</h1>");
         }
-  
+
+        function counter(){
+            setInterval(timer, 1000);
+        }
 
 
 
